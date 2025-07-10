@@ -1,0 +1,263 @@
+---
+title: "How to Add Images to Your Blog Posts"
+description: "Complete guide to adding images, featured images, and Open Graph previews to your MDX blog posts"
+date: "2024-01-21"
+author: "Blog Template"
+tags: ["tutorial", "images", "mdx", "blogging", "seo"]
+categories: ["tutorial", "documentation"]
+featured: true
+---
+
+# How to Add Images to Your Blog Posts
+
+Adding images to your blog posts makes them more engaging and helps illustrate your points. This guide covers everything you need to know about working with images in this blog template.
+
+## 📸 Featured Images & Open Graph
+
+First, let's talk about **featured images** - these are the thumbnails that appear when someone shares your blog post on social media (Twitter, Facebook, LinkedIn, etc.). This is called **Open Graph** functionality.
+
+### Setting a Featured Image
+
+Add an `image` field to your post's frontmatter:
+
+```markdown
+---
+title: "My Amazing Post"
+description: "This post will have a great thumbnail"
+date: "2024-01-21"
+image: "/images/posts/my-post-hero.jpg"  # This creates the social preview!
+---
+```
+
+When someone shares this post, they'll see:
+- Your post title
+- Description
+- The featured image as a thumbnail
+- Your site name
+
+This works automatically across Twitter, Facebook, LinkedIn, and other platforms!
+
+## 📁 Adding Images to Posts
+
+### Method 1: Local Images (Recommended)
+
+**Step 1: Add Images to Public Folder**
+```bash
+# Create images directory
+mkdir public/images
+mkdir public/images/posts
+
+# Add your image files here
+```
+
+**Step 2: Reference in Your Post**
+```markdown
+# My Tutorial
+
+Here's a screenshot of the interface:
+
+![Dashboard screenshot](/images/posts/dashboard.png)
+
+You can add captions by putting text right after:
+
+![Code example](/images/posts/code-snippet.png)
+*Figure 1: Example of the component structure*
+```
+
+### Method 2: Multiple Images in Sequence
+
+Perfect for tutorials and step-by-step guides:
+
+```markdown
+# Setting Up Your Environment
+
+First, install the dependencies:
+
+![NPM install command](/images/posts/npm-install.png)
+
+Next, start the development server:
+
+![Dev server running](/images/posts/dev-server.png)
+
+Finally, open your browser:
+
+![Application running](/images/posts/app-running.png)
+```
+
+### Method 3: Clickable Images
+
+Make images clickable to show larger versions:
+
+```markdown
+# Project Screenshots
+
+Click for full size:
+
+[![Thumbnail](/images/posts/app-thumb.jpg)](/images/posts/app-fullsize.jpg)
+
+Or link to external demos:
+
+[![Demo preview](/images/posts/demo-preview.jpg)](https://your-demo-site.com)
+```
+
+## 🛠️ Image Best Practices
+
+### File Organization
+```
+public/
+├── images/
+│   ├── posts/
+│   │   ├── tutorial-setup/
+│   │   │   ├── hero.jpg
+│   │   │   ├── step1.png
+│   │   │   └── final-result.jpg
+│   │   └── project-showcase/
+│   │       ├── preview.jpg
+│   │       └── architecture.png
+│   └── og-images/
+│       └── default-og.jpg
+```
+
+### Naming Convention
+- **Descriptive names**: `react-component-diagram.png` not `image1.png`
+- **Lowercase with hyphens**: `my-project-screenshot.jpg`
+- **Organized by post**: `tutorial-react-basics-step1.png`
+
+### Image Optimization
+
+**Resize before uploading**:
+- **Hero/featured images**: 1200px wide max
+- **Content images**: 800px wide max
+- **File size**: Keep under 500KB each
+
+**Use the right format**:
+- **JPG**: Photos, complex images
+- **PNG**: Screenshots, graphics with transparency
+- **WebP**: Modern format, smaller sizes (when supported)
+
+**Optimization tools**:
+- [TinyPNG](https://tinypng.com/) - Online compression
+- [Squoosh](https://squoosh.app/) - Google's image optimizer
+- [ImageOptim](https://imageoptim.com/) - Mac app
+
+## 🎨 Advanced Image Features
+
+### Responsive Images
+
+Images automatically resize on mobile, but you can add custom styling:
+
+```markdown
+![Large diagram](/images/posts/system-architecture.png)
+
+<img 
+  src="/images/posts/mobile-optimized.png" 
+  alt="Mobile interface" 
+  style="max-width: 300px; margin: 0 auto; display: block;"
+/>
+```
+
+### Image Galleries
+
+Create simple galleries with multiple images:
+
+```markdown
+## Project Screenshots
+
+![Desktop view](/images/posts/desktop.jpg) ![Mobile view](/images/posts/mobile.jpg)
+
+![Dark mode](/images/posts/dark-mode.jpg) ![Light mode](/images/posts/light-mode.jpg)
+```
+
+## 🌐 External Images
+
+You can also use external images (though local is better for performance):
+
+```markdown
+![Placeholder image](https://via.placeholder.com/600x300/0066cc/ffffff?text=Sample+Image)
+
+![GitHub avatar](https://github.com/yourusername.png)
+
+![Unsplash photo](https://images.unsplash.com/photo-1234567890)
+```
+
+## 🔍 SEO Benefits
+
+Using images properly helps with SEO:
+
+1. **Alt text** helps screen readers and search engines
+2. **Featured images** increase social media engagement
+3. **Optimized file sizes** improve page load speed
+4. **Descriptive filenames** help with image search rankings
+
+## 📱 Complete Example
+
+Here's a real blog post example with images:
+
+```markdown
+---
+title: "Building My Portfolio Website"
+description: "How I designed and built my personal portfolio from scratch"
+date: "2024-01-21"
+tags: ["portfolio", "design", "development"]
+categories: ["projects"]
+featured: true
+image: "/images/posts/portfolio/hero.jpg"
+---
+
+# Building My Portfolio Website
+
+I recently redesigned my portfolio and wanted to share the process!
+
+![Portfolio homepage](/images/posts/portfolio/homepage.jpg)
+*The new homepage design*
+
+## Design Process
+
+I started with wireframes:
+
+![Initial wireframes](/images/posts/portfolio/wireframes.png)
+
+Then moved to high-fidelity mockups:
+
+![Design mockups](/images/posts/portfolio/mockups.jpg)
+*Figma designs for desktop and mobile*
+
+## Development
+
+The tech stack I chose:
+
+![Tech stack diagram](/images/posts/portfolio/tech-stack.png)
+
+Final result across devices:
+
+![Responsive showcase](/images/posts/portfolio/responsive.jpg)
+
+You can see it live at [myportfolio.com](https://myportfolio.com)!
+```
+
+## ✅ Quick Checklist
+
+When adding images to your posts:
+
+- [ ] Store images in `public/images/posts/` folder
+- [ ] Use descriptive filenames and alt text
+- [ ] Optimize file sizes (aim for < 500KB)
+- [ ] Set featured image in frontmatter for social sharing
+- [ ] Test images display correctly locally
+- [ ] Provide alt text for accessibility
+- [ ] Consider mobile users (responsive sizing)
+
+## 🚀 Next Steps
+
+Now that you know how to add images, try creating a visual blog post! Some ideas:
+
+- **Tutorial with screenshots** - Show each step visually
+- **Project showcase** - Display your work with images
+- **Before/after comparisons** - Great for redesigns or improvements
+- **Process documentation** - Show your workflow with images
+
+Images make your content more engaging and shareable. Start adding them to your posts and watch your engagement grow!
+
+---
+
+*This post demonstrates featured images and Open Graph functionality - try sharing it on social media to see the thumbnail in action!* 📸
