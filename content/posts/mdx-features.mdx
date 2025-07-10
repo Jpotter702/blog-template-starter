@@ -1,0 +1,150 @@
+---
+title: "MDX Features and Components"
+description: "Explore the powerful features of MDX and how to use React components in your blog posts"
+date: "2024-01-05"
+author: "Blog Template"
+tags: ["mdx", "react", "components", "markdown"]
+categories: ["tutorial", "features"]
+featured: false
+---
+
+# MDX Features and Components
+
+MDX combines the best of Markdown and React, allowing you to write content with the simplicity of Markdown while having the power of React components when you need them.
+
+## What is MDX?
+
+MDX is a format that lets you use JSX in your Markdown content. You can import components, such as interactive charts or alerts, and embed them within your content.
+
+## Basic Markdown Features
+
+All standard Markdown features are supported:
+
+### Headings
+
+You can use all heading levels from H1 to H6.
+
+### Text Formatting
+
+You can make text **bold**, *italic*, or `code`. You can also use ~~strikethrough~~ text.
+
+### Lists
+
+Unordered lists:
+- Item 1
+- Item 2
+- Item 3
+
+Ordered lists:
+1. First item
+2. Second item
+3. Third item
+
+### Links and Images
+
+You can add [links](https://example.com) and images:
+
+![Sample Image](https://via.placeholder.com/600x300)
+
+### Code Blocks
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("World"));
+```
+
+```css
+.example {
+  color: #3b82f6;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+```
+
+### Tables
+
+| Feature | Supported | Notes |
+|---------|-----------|-------|
+| Headers | ✅ | H1-H6 |
+| Lists | ✅ | Ordered and unordered |
+| Code | ✅ | Inline and blocks |
+| Tables | ✅ | Like this one |
+
+### Blockquotes
+
+> This is a blockquote. It can be used for emphasizing important information or quoting other sources.
+
+## Advanced Features
+
+### Math Support
+
+You can add math equations using LaTeX syntax (when properly configured):
+
+```
+E = mc^2
+```
+
+### Syntax Highlighting
+
+Code blocks automatically get syntax highlighting based on the language specified:
+
+```typescript
+interface BlogPost {
+  title: string;
+  date: string;
+  content: string;
+}
+
+const post: BlogPost = {
+  title: "My Blog Post",
+  date: "2024-01-15",
+  content: "This is my blog post content."
+};
+```
+
+### Horizontal Rules
+
+You can add horizontal rules to separate content:
+
+---
+
+## React Components in MDX
+
+One of the most powerful features of MDX is the ability to use React components directly in your content. This template includes several pre-built components for common use cases.
+
+### Custom Components
+
+You can create custom components and use them in your MDX files. For example, if you had a `Button` component:
+
+```jsx
+<Button variant="primary" size="lg">
+  Click me!
+</Button>
+```
+
+### Interactive Content
+
+Since you can use React components, you can create interactive content like:
+
+- Interactive charts and graphs
+- Embedded forms
+- Custom UI elements
+- Dynamic content
+
+## Best Practices
+
+1. **Keep it simple** - Use Markdown for content, React for interactivity
+2. **Performance** - Be mindful of component bundle size
+3. **Accessibility** - Ensure your components are accessible
+4. **SEO** - Remember that complex components might not be SEO-friendly
+
+## Conclusion
+
+MDX provides a powerful way to create rich, interactive content while maintaining the simplicity of Markdown. This template gives you everything you need to start creating amazing blog posts with MDX.
+
+---
+
+Ready to start writing? 📝

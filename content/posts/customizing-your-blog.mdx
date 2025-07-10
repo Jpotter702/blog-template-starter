@@ -1,0 +1,108 @@
+---
+title: "Customizing Your Blog Design"
+description: "Learn how to customize the design and styling of your blog template"
+date: "2024-01-10"
+author: "Blog Template"
+tags: ["customization", "design", "tailwind", "styling"]
+categories: ["tutorial", "design"]
+featured: false
+---
+
+# Customizing Your Blog Design
+
+One of the great features of this blog template is how easy it is to customize. Everything is configured through the `site.config.ts` file, making it simple to change colors, fonts, and layout without touching the code.
+
+## Theme Configuration
+
+The theme configuration is located in `src/lib/site.config.ts`. Here's what you can customize:
+
+### Typography
+
+```typescript
+typography: {
+  fontFamily: {
+    sans: ["Inter", "system-ui", "sans-serif"],
+    serif: ["Georgia", "serif"],
+    mono: ["JetBrains Mono", "monospace"],
+  },
+  fontSize: {
+    xs: "0.75rem",
+    sm: "0.875rem",
+    base: "1rem",
+    lg: "1.125rem",
+    xl: "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.875rem",
+    "4xl": "2.25rem",
+    "5xl": "3rem",
+  },
+}
+```
+
+### Colors
+
+```typescript
+colors: {
+  brand: {
+    primary: "#3b82f6",
+    secondary: "#6b7280",
+    accent: "#10b981",
+  },
+  content: {
+    primary: "#171717",
+    secondary: "#6b7280",
+    muted: "#9ca3af",
+    inverse: "#ffffff",
+  },
+}
+```
+
+### Layout
+
+```typescript
+spacing: {
+  header: "6rem",
+  container: "2rem",
+  section: "4rem",
+  component: "1.5rem",
+}
+```
+
+## Adding Custom Components
+
+You can create custom MDX components by editing the `src/components/mdx-components.tsx` file. For example, to add a custom callout component:
+
+```typescript
+// Add to your MDX components
+Callout: ({ children, type = "info" }) => (
+  <div className={`p-4 rounded-lg border-l-4 ${
+    type === "warning" ? "border-yellow-500 bg-yellow-50" :
+    type === "error" ? "border-red-500 bg-red-50" :
+    "border-blue-500 bg-blue-50"
+  }`}>
+    {children}
+  </div>
+),
+```
+
+## Styling Tips
+
+- Use CSS custom properties for consistent theming
+- Leverage Tailwind's utility classes for rapid development
+- Consider dark mode support from the start
+- Test your design on different screen sizes
+
+## Advanced Customization
+
+For more advanced customization, you can:
+
+1. **Modify the CSS** in `src/app/globals.css`
+2. **Add custom components** in `src/components/`
+3. **Extend the Tailwind configuration** with custom utilities
+4. **Add new pages** in the `src/app/` directory
+
+Remember to test your changes thoroughly and maintain good accessibility practices!
+
+---
+
+Happy customizing! 🎨
