@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/site.config"
 import { Menu, X } from "lucide-react"
+import { SearchBox } from "@/components/search/search-box"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,17 +20,20 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {siteConfig.navigation.main.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center space-x-6">
+          <nav className="flex items-center space-x-6">
+            {siteConfig.navigation.main.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+          <SearchBox className="w-72" showButton={false} />
+        </div>
 
         {/* Mobile menu button */}
         <Button
@@ -45,18 +49,21 @@ export function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <nav className="flex flex-col space-y-4 px-4 py-4 bg-background border-t">
-            {siteConfig.navigation.main.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex flex-col space-y-4 px-4 py-4 bg-background border-t">
+            <SearchBox className="w-full" showButton={false} />
+            <nav className="flex flex-col space-y-4">
+              {siteConfig.navigation.main.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
       )}
     </header>
