@@ -219,27 +219,69 @@ content/
 
 ## Deployment
 
-### Vercel (Recommended)
+### 🚀 Vercel (Recommended - One-Click Deploy)
 
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically
+#### Option 1: Deploy Button
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FJpotter702%2Fblog-template-starter&project-name=my-blog&repository-name=my-blog)
 
-### Other Platforms
+#### Option 2: Manual Deployment
+1. **Fork or clone this repository**
+2. **Push to your GitHub account**
+3. **Go to [vercel.com](https://vercel.com)**
+4. **Click "New Project"**
+5. **Import your repository**
+6. **Configure environment variables** (optional):
+   ```
+   NEXT_PUBLIC_SITE_URL=https://yourblog.com
+   ```
+7. **Deploy!** 🎉
 
-This template works with any static hosting service:
+#### Environment Variables for Vercel
+```bash
+# Required for production
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 
-- **Netlify**
-- **GitHub Pages**
-- **AWS S3 + CloudFront**
-- **Firebase Hosting**
+# Optional
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX  # Google Analytics
+```
 
-Build the static site:
+### 🔧 Build Configuration
 
+The template includes:
+- ✅ **vercel.json** - Optimized Vercel configuration
+- ✅ **Auto-redirects** - SEO-friendly URL redirects
+- ✅ **Headers** - Security and caching headers
+- ✅ **Static generation** - Maximum performance
+- ✅ **RSS/Sitemap** - Proper content type headers
+
+### 🌐 Other Platforms
+
+#### Netlify
+1. Connect your GitHub repository
+2. Build command: `npm run build`
+3. Publish directory: `out` (if using static export)
+
+#### GitHub Pages
 ```bash
 npm run build
-npm run start
+npm run export
+# Deploy the `out` folder
 ```
+
+#### Railway/Render
+- Automatically detects Next.js
+- Zero configuration needed
+- Just connect your repository
+
+### 📊 Performance Optimizations
+
+The template includes:
+- **Static generation** where possible
+- **Image optimization** 
+- **RSS feed caching**
+- **SEO optimizations**
+- **Security headers**
+- **Automatic sitemap generation**
 
 ## Scripts
 

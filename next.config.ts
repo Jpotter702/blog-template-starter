@@ -6,9 +6,28 @@ const nextConfig: NextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+      },
+    ],
     formats: ['image/avif', 'image/webp'],
   },
+  // Optimize for Vercel deployment
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  // Enable static generation where possible
+  // generateStaticParams is not a Next.js config option
 };
 
 export default nextConfig;

@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Blog Template",
   description: "A modern blog template built with Next.js, MDX, and Tailwind CSS",
-  url: "https://blog-template.vercel.app",
-  ogImage: "https://blog-template.vercel.app/og.jpg",
+  url: process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000",
+  ogImage: process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL}/og.jpg` : process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/og.jpg` : "http://localhost:3000/og.jpg",
   links: {
     twitter: "https://twitter.com/yourusername",
     github: "https://github.com/yourusername",
@@ -102,9 +102,9 @@ export const siteConfig = {
     titleTemplate: "%s | Blog Template",
     defaultTitle: "Blog Template",
     defaultDescription: "A modern blog template with great SEO and performance",
-    keywords: ["blog", "nextjs", "mdx", "tailwind", "typescript"],
+    keywords: ["blog", "nextjs", "mdx", "tailwind", "typescript"] as string[],
     twitterCard: "summary_large_image",
-    canonicalUrl: "https://blog-template.vercel.app",
+    canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000",
   },
   // Navigation
   navigation: {

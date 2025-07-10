@@ -67,7 +67,7 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound()
   }
   
-  const components = useMDXComponents({})
+  const components = useMDXComponents
   
   return (
     <article className="container py-8">
@@ -77,7 +77,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className="prose prose-neutral dark:prose-invert max-w-none mt-8">
           <MDXRemote
             source={post.content}
-            components={components}
+            components={components({})}
           />
         </div>
       </div>

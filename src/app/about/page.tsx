@@ -21,7 +21,7 @@ export default function AboutPage() {
             <h2>Welcome to {siteConfig.name}</h2>
             <p>
               This is a modern blog template built with cutting-edge technologies including Next.js 14, 
-              MDX, Tailwind CSS 4, and shadcn/ui components. It's designed to be fast, accessible, 
+              MDX, Tailwind CSS 4, and shadcn/ui components. It&apos;s designed to be fast, accessible, 
               and easy to customize.
             </p>
             

@@ -102,8 +102,8 @@ export default function ContactPage() {
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <h2>Other Ways to Connect</h2>
             <p>
-              We're always interested in hearing from our readers. Whether you have questions about 
-              our content, suggestions for new topics, or just want to say hello, don't hesitate to reach out.
+              We&apos;re always interested in hearing from our readers. Whether you have questions about 
+              our content, suggestions for new topics, or just want to say hello, don&apos;t hesitate to reach out.
             </p>
             
             <h3>Response Time</h3>
@@ -114,8 +114,8 @@ export default function ContactPage() {
             
             <h3>Collaboration</h3>
             <p>
-              Interested in guest posting or collaboration? We'd love to hear from you! 
-              Send us an email with your ideas and we'll get back to you.
+              Interested in guest posting or collaboration? We&apos;d love to hear from you! 
+              Send us an email with your ideas and we&apos;ll get back to you.
             </p>
           </div>
         </div>
